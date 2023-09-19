@@ -259,8 +259,7 @@ public class Validation {
                     || product.getProductName().startsWith(productName)
                     || product.getProductName().toLowerCase().startsWith(productName)
                     || product.getProductName().endsWith(productName)
-                    || product.getProductName().toLowerCase().endsWith(productName)) 
-            {
+                    || product.getProductName().toLowerCase().endsWith(productName)) {
                 resultList.add(product);
             }
         }
@@ -375,7 +374,8 @@ public class Validation {
     public boolean deleteProduct(String productID, ArrayList<Product> listProduct) {
         for (int i = 0; i < listProduct.size(); i++) {
             if (listProduct.get(i).getProductID().equalsIgnoreCase(productID)) {
-                System.out.println("Do you want to delete " + listProduct.get(i).getProductName());
+                System.out.println("Do you want to delete " + listProduct.get(i).getProductName() + "_" + listProduct.get(i).getUnitPrice()
+                        + listProduct.get(i).getQuantity() + "_" + listProduct.get(i).getStatus());
                 ArrayList<String> commit = new ArrayList<>();
                 commit.add("NO");
                 commit.add("YES");

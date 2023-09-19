@@ -1,0 +1,5 @@
+1. Create productID must be ignore case (S2 same s2) (Fixed)
+2. Update product must be enter blank is "" not " " to remain old information (Fixed)
+2.1. Do not accept for Update productID (Not yet) (Just Remove this code block)
+3. Delete information must be appear all information of that product (Fixed)
+4. Name of class must be start by noun (Fixed)
