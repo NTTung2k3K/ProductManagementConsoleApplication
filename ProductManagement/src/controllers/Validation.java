@@ -382,9 +382,9 @@ public class Validation {
                 int choice = menu.getChoice(commit);
                 if (choice == 2) {
                     listProduct.remove(listProduct.get(i));
-                    System.err.println("Delete success");
+                            return true;
                 } else if (choice == 1) {
-                    return true;
+                    return false;
                 }
             }
         }

@@ -32,9 +32,6 @@ public class ProductManage {
     Menu menuConfirm = null;
     ArrayList<String> ask = null;
 
-    
-    
-    
     // Init object
     public ProductManage() {
         // Init the Objects to control product
@@ -47,7 +44,7 @@ public class ProductManage {
         ask = new ArrayList<>();
         ask.add("Continue input");
         ask.add("Back");
-        
+
         //Information for TEST
         listProduct.add(new Product("S5", "Fannn", 4, 2, "Available"));
         listProduct.add(new Product("S2", "Laptop", 25, 3, "Available"));
@@ -57,16 +54,11 @@ public class ProductManage {
         listProduct.add(new Product("S0", "KeyBoard", 25, 2, "Not Available"));
     }
 
-    
-    
-    
-    
-    
     /**
      * Create a product by get input from user
      */
     public void createProduct() {
-        
+
         int choice;
         Product product = new Product();
         boolean flag = true;
@@ -260,11 +252,16 @@ public class ProductManage {
     public void removeProduct() {
 
         String productID = tools.inputString("ProductID want to delete: ");
-        if (validation.deleteProduct(productID, listProduct)) {
-            System.out.println("Cancel delete success");
+        if (!validation.isExistProduct(productID, listProduct)) {
+            System.out.println("Product is not Exist");
         } else {
-            System.out.println("Product does not exist");
+            if (validation.deleteProduct(productID, listProduct)) {
+                System.err.println("Delete success");
+            } else {
+                System.out.println("Cancel delete success");
+            }
         }
+
     }
 
     // Declare pathName Local variable to used for save and load from file
